@@ -1,0 +1,12 @@
+# Initiate prisma
+npx prisma init
+
+# Create migrations
+npx prisma migrate dev --name init
+
+# For prod
+npx prisma migrate deploy
+
+
+# Generate models
+npx prisma generate

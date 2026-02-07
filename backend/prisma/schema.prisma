@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model Patient {
+  id     String @id @default(uuid())
+  name   String @db.VarChar(45)
+  age    Int
+  weight Float
+  gener  Gender
+
+  notes Notes[]
+
+  @@map("patient")
+}
+
+model Notes {
+  idnotes      String @id @default(uuid())
+  name         String @db.VarChar(45)
+  dosage       Int
+  frequency    Int
+  duration     String @db.Text
+  instructions String @db.Text
+
+  patientId String
+  patient   Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@index([patientId], name: "fk_notes_patient_idx")
+  @@map("notes")
+}
