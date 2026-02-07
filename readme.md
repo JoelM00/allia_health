@@ -36,12 +36,11 @@ http://localhost:3000
 
 1. **Authentication & Authorization**
    - Implement JWT-based authentication.
-   - Role-based access control (RBAC) for admin vs regular users.
+   - Role-based access control with admin and regular users.
 
 2. **UI/UX Enhancements**
    - Modern responsive design.
    - Improved navigation and accessibility.
-   - Interactive components and better feedback for actions.
 
 3. **Test Coverage**
    - Add unit, integration, and end-to-end tests.
@@ -50,6 +49,5 @@ http://localhost:3000
 4. **Error Uniformization**
    - Standardize API error responses.
    - Provide clear, user-friendly error messages on the frontend.
-   - Centralized logging for debugging.
 
 ---
