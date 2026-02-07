@@ -34,19 +34,25 @@ http://localhost:3000
 
 ## Planned Improvements
 
-1. **Authentication & Authorization**
+1. **Env loading bug**
+   - Fix the environment for develop, prodution and tests.
+
+2. **Fix the docker compose deploy**
+   - Guarantee that the correct variables are being loaded.
+
+3. **Authentication & Authorization**
    - Implement JWT-based authentication.
    - Role-based access control with admin and regular users.
 
-2. **UI/UX Enhancements**
+4. **UI/UX Enhancements**
    - Modern responsive design.
    - Improved navigation and accessibility.
 
-3. **Test Coverage**
+5. **Test Coverage**
    - Add unit, integration, and end-to-end tests.
    - Ensure 80%+ code coverage.
 
-4. **Error Uniformization**
+6. **Error Uniformization**
    - Standardize API error responses.
    - Provide clear, user-friendly error messages on the frontend.
 
