@@ -15,11 +15,11 @@ export const createNoteSchema = z.object({
 
 export const updateNoteSchema = z.object({
   body: z.object({
-    name: z.string().min(1),
-    dosage: z.number().int().positive(),
-    frequency: z.number().int().positive(),
-    duration: z.string().min(1),
-    instructions: z.string().min(1),
+    name: z.string().min(1).optional(),
+    dosage: z.number().int().positive().optional(),
+    frequency: z.number().int().positive().optional(),
+    duration: z.string().min(1).optional(),
+    instructions: z.string().min(1).optional(),
   }),
 })
 

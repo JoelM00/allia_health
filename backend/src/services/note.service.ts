@@ -23,10 +23,8 @@ export class NoteService {
     })
   }
 
-  async getNoteById(id: string): Promise<Notes> {
-    const note = await prisma.notes.findUnique({ where: { idnotes: id } })
-    if (!note) throw new BadRequestError('Note not found')
-    return note
+  async getNoteById(id: string): Promise<Notes | null> {
+    return await prisma.notes.findUnique({ where: { idnotes: id } })
   }
 
   async updateNote(
@@ -37,7 +35,6 @@ export class NoteService {
     duration?: string,
     instructions?: string,
   ): Promise<Notes> {
-    
     return prisma.notes.update({
       where: { idnotes: id },
       data: { name, dosage, frequency, duration, instructions },

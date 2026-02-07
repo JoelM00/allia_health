@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 import morgan from 'morgan'
 import { AppRoutes } from './routes'
 import { Database } from './config/database'
+import { errorHandler } from './middlewares/error'
 
 const envFile = process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
 dotenv.config({ path: envFile })
@@ -39,6 +40,8 @@ export class App {
     this.app.get('/health', (req, res) => {
       res.json({ status: 'ok', timestamp: new Date().toISOString() })
     })
+
+    this.app.use(errorHandler)
   }
 
   public async start(): Promise<void> {

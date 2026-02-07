@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { NoteService } from '../services/note.service'
+import { BadRequestError } from '../errors/bad-request.error'
 
 export class NoteController {
   private notesService = new NoteService()
@@ -40,9 +41,11 @@ export class NoteController {
     try {
       const { id } = req.params
 
-      console.log('NOTE: ', id)
-
       const note = await this.notesService.getNoteById(id)
+
+      if (!note) {
+        throw new BadRequestError('Note does not exist')
+      }
 
       res.json({ success: true, data: note })
     } catch (error: any) {

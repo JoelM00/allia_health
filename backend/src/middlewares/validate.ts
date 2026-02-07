@@ -12,9 +12,14 @@ export const validateZod = (schema: ZodObject) => {
       })
       next()
     } catch (err: any) {
+      const messages = JSON.parse(err)?.map((e: any) => ({
+        attribute: e.path.at(-1) ?? null,
+        message: e.message,
+      }))
+
       return res.status(400).json({
         success: false,
-        errors: err.errors,
+        errors: messages,
       })
     }
   }

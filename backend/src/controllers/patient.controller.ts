@@ -1,6 +1,7 @@
 import { Request, Response } from 'express'
 import { PatientService } from '../services/patient.service'
 import { NotFoundError } from '../errors/not-found.error'
+import { BadRequestError } from '../errors/bad-request.error'
 
 export class PatientController {
   private patientService = new PatientService()
@@ -36,6 +37,10 @@ export class PatientController {
       const { id } = req.params
 
       const patient = await this.patientService.getPatientById(id)
+
+      if (!patient) {
+        throw new BadRequestError('Patient does not exist')
+      }
 
       res.json({ success: true, data: patient })
     } catch (error: any) {

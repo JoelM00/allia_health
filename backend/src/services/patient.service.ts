@@ -21,13 +21,11 @@ export class PatientService {
     })
   }
 
-  async getPatientById(id: string): Promise<Patient> {
-    const patient = await prisma.patient.findUnique({
+  async getPatientById(id: string): Promise<Patient | null> {
+    return await prisma.patient.findUnique({
       where: { id },
       include: { notes: true },
     })
-    if (!patient) throw new BadRequestError('Patient not found')
-    return patient
   }
 
   async updatePatient(
