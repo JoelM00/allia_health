@@ -14,7 +14,7 @@ The app is containerized using **Docker Compose**, which handles all dependencie
 
 ```bash
 git clone git@github.com:JoelM00/allia_health.git
-cd myapp
+cd allia_health
 ```
 
 2. **Start the app**
