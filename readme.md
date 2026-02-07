@@ -6,10 +6,6 @@
 
 ---
 
-## Setup
-
-The app is containerized using **Docker Compose**, which handles all dependencies and services.
-
 1. **Clone the repository**
 
 ```bash
@@ -19,8 +15,20 @@ cd allia_health
 
 2. **Start the app**
 
-```bash
-docker-compose up --build
+# Backend
+
+```
+cd backend
+npm install
+npm run dev
+```
+
+# Frontend
+
+```
+cd frontend
+npm install
+npm run dev
 ```
 
 3. **Access the app**
