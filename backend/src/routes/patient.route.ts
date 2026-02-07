@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import { PatientController } from '../controllers/patient.controller'
-import { requireAuth } from '../middlewares/auth'
 import { validateZod } from '../middlewares/validate'
 import {
   createPatientSchema,

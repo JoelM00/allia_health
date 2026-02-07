@@ -1,5 +1,4 @@
 import { Router } from 'express'
-import { requireAuth } from '../middlewares/auth'
 import { validateZod } from '../middlewares/validate'
 import {
   createPatientSchema,
