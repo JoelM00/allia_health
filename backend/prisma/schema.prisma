@@ -18,7 +18,7 @@ model Patient {
   name   String @db.VarChar(45)
   age    Int
   weight Float
-  gener  Gender
+  gender Gender
 
   notes Notes[]
 

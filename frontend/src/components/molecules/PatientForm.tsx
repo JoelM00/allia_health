@@ -10,11 +10,11 @@ export const PatientForm: React.FC<Props> = ({ onSubmit }) => {
   const [name, setName] = useState('')
   const [age, setAge] = useState(0)
   const [weight, setWeight] = useState(0)
-  const [gener, setGener] = useState('MALE')
+  const [gender, setgender] = useState('MALE')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onSubmit({ name, age, weight, gener })
+    onSubmit({ name, age, weight, gender })
   }
 
   return (
@@ -39,8 +39,8 @@ export const PatientForm: React.FC<Props> = ({ onSubmit }) => {
         />
         <TextField
           label="Gender"
-          value={gener}
-          onChange={(e) => setGener(e.target.value)}
+          value={gender}
+          onChange={(e) => setgender(e.target.value)}
         />
         <Button type="submit" variant="contained">
           Create Patient

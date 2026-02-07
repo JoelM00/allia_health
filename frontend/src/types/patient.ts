@@ -3,5 +3,5 @@ export interface Patient {
   name: string
   age: number
   weight: number
-  gener: string
+  gender: string
 }

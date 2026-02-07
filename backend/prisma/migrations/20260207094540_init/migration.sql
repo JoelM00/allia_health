@@ -7,7 +7,7 @@ CREATE TABLE "patient" (
     "name" VARCHAR(45) NOT NULL,
     "age" INTEGER NOT NULL,
     "weight" DOUBLE PRECISION NOT NULL,
-    "gener" "Gender" NOT NULL,
+    "gender" "Gender" NOT NULL,
 
     CONSTRAINT "patient_pkey" PRIMARY KEY ("id")
 );

@@ -7,10 +7,10 @@ export class PatientService {
     name: string,
     age: number,
     weight: number,
-    gener: 'MALE' | 'FEMALE' | 'OTHER',
+    gender: 'MALE' | 'FEMALE' | 'OTHER',
   ): Promise<Patient> {
     return prisma.patient.create({
-      data: { name, age, weight, gener },
+      data: { name, age, weight, gender },
     })
   }
 
@@ -33,11 +33,11 @@ export class PatientService {
     name?: string,
     age?: number,
     weight?: number,
-    gener?: 'MALE' | 'FEMALE' | 'OTHER',
+    gender?: 'MALE' | 'FEMALE' | 'OTHER',
   ): Promise<Patient> {
     return prisma.patient.update({
       where: { id },
-      data: { name, age, weight, gener },
+      data: { name, age, weight, gender },
     })
   }
 

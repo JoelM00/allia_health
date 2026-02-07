@@ -5,7 +5,7 @@ export const createPatientSchema = z.object({
     name: z.string().min(1, 'Name is required'),
     age: z.number().int().positive(),
     weight: z.number().positive(),
-    gener: z.enum(['MALE', 'FEMALE', 'OTHER']),
+    gender: z.enum(['MALE', 'FEMALE', 'OTHER']),
   }),
 })
 
@@ -14,7 +14,7 @@ export const updatePatientSchema = z.object({
     name: z.string().min(1).optional(),
     age: z.number().int().positive().optional(),
     weight: z.number().positive().optional(),
-    gener: z.enum(['MALE', 'FEMALE', 'OTHER']).optional(),
+    gender: z.enum(['MALE', 'FEMALE', 'OTHER']).optional(),
   }),
 })
 

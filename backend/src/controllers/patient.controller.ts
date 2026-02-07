@@ -8,13 +8,13 @@ export class PatientController {
 
   createPatient = async (req: Request, res: Response) => {
     try {
-      const { name, age, weight, gener } = req.body
+      const { name, age, weight, gender } = req.body
 
       const patient = await this.patientService.createPatient(
         name,
         age,
         weight,
-        gener,
+        gender,
       )
 
       res.status(201).json({ success: true, data: patient })
@@ -51,14 +51,14 @@ export class PatientController {
   updatePatient = async (req: Request, res: Response) => {
     try {
       const { id } = req.params
-      const { name, age, weight, gener } = req.body
+      const { name, age, weight, gender } = req.body
 
       const patient = await this.patientService.updatePatient(
         id,
         name,
         age,
         weight,
-        gener,
+        gender,
       )
 
       res.json({ success: true, data: patient })

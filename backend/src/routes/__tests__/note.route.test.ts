@@ -15,7 +15,7 @@ describe('Notes API', () => {
         name: 'Diana Martins',
         age: 28,
         weight: 65.5,
-        gener: 'FEMALE',
+        gender: 'FEMALE',
       })
       .expect(201)
 

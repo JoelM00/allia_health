@@ -9,7 +9,7 @@ describe('Patients API', () => {
   it('should create a patient', async () => {
     const res = await request(app)
       .post('/api/patients')
-      .send({ name: 'Joel Martins', age: 26, weight: 72.5, gener: 'MALE' })
+      .send({ name: 'Joel Martins', age: 26, weight: 72.5, gender: 'MALE' })
       .expect(201)
 
     expect(res.body.success).toBe(true)
